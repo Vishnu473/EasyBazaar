@@ -1,50 +1,76 @@
-# Welcome to your Expo app 👋
+# EasyBazaar 🛍️
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+EasyBazaar is a modern e-commerce platform built using React Native, Expo, and TypeScript. The application allows users to browse products, view product details, and explore different categories. This project focuses on providing a clean user interface and seamless navigation with infinite scrolling and category-based filtering.
 
-## Get started
+## Features ✨
 
-1. Install dependencies
+- **Category Chip List**: Displays a list of categories for easy filtering.
+- **Product Listing**: Infinite scrolling to display products dynamically fetched from an API.
+- **Product Detail Page**: View detailed information about each product, including images, description, price, and reviews.
+- **API Integration**: Fetching data from an API using Axios and React Query for efficient data fetching.
+- **Responsive UI**: Built with Expo and React Native, ensuring compatibility across different devices.
 
-   ```bash
-   npm install
-   ```
+## Technologies Used 🛠️
 
-2. Start the app
+- **React Native**: Framework for building cross-platform mobile apps.
+- **Expo**: A toolset and platform for universal React apps.
+- **TypeScript**: A strongly typed programming language that builds on JavaScript.
+- **React Query**: A data-fetching and caching library for React applications.
+- **Axios**: Promise-based HTTP client for making requests to APIs.
+- **Zustand**: State management library for React applications.
+- **Tailwind CSS**: A utility-first CSS framework for fast UI development.
+- **React Navigation**: Navigation library for routing and navigation in React Native apps.
+- **Expo Router**: A routing system based on file-system-based routing.
 
-   ```bash
-    npx expo start
-   ```
+## Installation ⚡
 
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+1. **Clone the Repository**:
 
 ```bash
-npm run reset-project
+git clone https://github.com/Vishnu473/EasyBazaar.git
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+2. **Install Dependencies**:
 
-## Learn more
+Navigate to the project directory and install the dependencies:
 
-To learn more about developing your project with Expo, look at the following resources:
+```bash
+cd EasyBazaar
+npm install
+```
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+3. **Start the Application**:
 
-## Join the community
+You can run the app using Expo by running:
 
-Join our community of developers creating universal apps.
+```bash
+npm start
+```
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+This will open the Expo CLI, which will give you options to run the app on your device, simulator, or browser.
+
+## Directory Structure 📂
+
+- **/app**: Contains the main app components and screens.
+- **/services**: Contains the logic for interacting with APIs and managing data.
+- **/themes**: Custom themes and styling for the app.
+- **/components**: Reusable UI components such as headers, cards, buttons, etc.
+- **/assets**: Contains images and other assets used in the app.
+
+## API Endpoints 🌐
+
+- **Categories API**: `GET /categories` - Fetches a list of categories.
+- **Products API**: `GET /products?category={category}` - Fetches products based on the selected category.
+- **Product Details API**: `GET /product/{productId}` - Fetches detailed information for a single product.
+
+## Contributing 🤝
+
+Contributions are welcome! Please fork the repository, create a new branch, and submit a pull request for any improvements or bug fixes.
+
+## License 📜
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+Enjoy building with EasyBazaar! 🎉 Feel free to adjust it to match your project’s specifics.
