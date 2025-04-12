@@ -1,45 +1,38 @@
-import { Tabs } from 'expo-router';
-import React from 'react';
-import { Platform } from 'react-native';
-
-import { HapticTab } from '@/components/HapticTab';
-import { IconSymbol } from '@/components/ui/IconSymbol';
-import TabBarBackground from '@/components/ui/TabBarBackground';
-import { Colors } from '@/constants/Colors';
-import { useColorScheme } from '@/hooks/useColorScheme';
+import { View, Text } from 'react-native'
+import React from 'react'
+import { Tabs } from 'expo-router'
+import { Ionicons } from '@expo/vector-icons'
+import AppHeader from '@/app/components/AppHeader'
+import { useTheme } from '@/themes/themes'
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
+  const { theme } = useTheme();
   return (
-    <Tabs
-      screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        headerShown: false,
-        tabBarButton: HapticTab,
-        tabBarBackground: TabBarBackground,
-        tabBarStyle: Platform.select({
-          ios: {
-            // Use a transparent background on iOS to show the blur effect
-            position: 'absolute',
-          },
-          default: {},
-        }),
-      }}>
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
-        }}
-      />
-      <Tabs.Screen
-        name="explore"
-        options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
-        }}
-      />
+    <Tabs screenOptions={{
+      tabBarShowLabel: false, headerShown: false,
+      tabBarStyle: {
+        backgroundColor: theme.backgroundColor,
+        borderTopWidth: 1,
+        borderTopColor:theme.borderColor,
+        position: 'absolute',
+        elevation: 8, // ← Android shadow
+        height: 40,
+        paddingBottom: 8,
+
+        // iOS shadow
+        shadowColor: theme.borderColor ?? '#000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.1,
+        shadowRadius: 3,
+      },
+      tabBarActiveTintColor: theme.primaryColor,
+      tabBarInactiveTintColor : theme.secondaryColor
+    }}>
+      <Tabs.Screen name='index' options={{ tabBarIcon: ({ focused, size, color }: { focused: boolean, size: number; color: string }) => <Ionicons name={focused ? 'home' : 'home-outline'} size={size} color={color} /> }} />
+      <Tabs.Screen name='search' options={{ tabBarIcon: ({ focused, size, color }: { focused: boolean, size: number; color: string }) => <Ionicons name={focused ? 'search' : 'search-outline'} size={size} color={color} /> }} />
+      <Tabs.Screen name='liked' options={{ tabBarIcon: ({ focused, size, color }: { focused: boolean, size: number; color: string }) => <Ionicons name={focused ? 'heart' : 'heart-outline'} size={size} color={color} /> }} />
+      <Tabs.Screen name='profile' options={{ tabBarIcon: ({ focused, size, color }: { focused: boolean, size: number; color: string }) => <Ionicons name={focused ? 'person-circle' : 'person-circle-outline'} size={size} color={color} /> }} />
+
     </Tabs>
-  );
+  )
 }
