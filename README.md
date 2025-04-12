@@ -17,8 +17,8 @@ EasyBazaar is a modern e-commerce platform built using React Native, Expo, and T
 - **TypeScript**: A strongly typed programming language that builds on JavaScript.
 - **React Query**: A data-fetching and caching library for React applications.
 - **Axios**: Promise-based HTTP client for making requests to APIs.
-- **Zustand**: State management library for React applications.
-- **Tailwind CSS**: A utility-first CSS framework for fast UI development.
+<!--- **Zustand**: State management library for React applications.
+- **Tailwind CSS**: A utility-first CSS framework for fast UI development.-->
 - **React Navigation**: Navigation library for routing and navigation in React Native apps.
 - **Expo Router**: A routing system based on file-system-based routing.
 
